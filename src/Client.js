@@ -47,15 +47,19 @@ class Client {
 			.then(res => console.log(res.data))
 			.catch(err => console.log(err));
 	}
+	
+	  /**
+   * Gets information about a bot.
+   * @param {string} id The ID of the bot you want to get the information from.
+   * @returns {Promise<{ message: string, success: boolean }>}
+   */
+
+	
 	getBot(id) {
 		
        if (typeof id !== 'string') throw new TypeError('ID must be a string');
-		axios
-		.get(
-		      this._baseURL + `/getBot/id`
-                     )
-                     .then(res => console.log(res.body))
-	             .then(err => console.log(err));
+	let req = axios.get(this._baseURL + `/getBot/id`).then(err => console.log(err));
+                return req;
 	}
 	
 }
