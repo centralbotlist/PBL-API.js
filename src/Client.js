@@ -47,6 +47,17 @@ class Client {
 			.then(res => console.log(res.data))
 			.catch(err => console.log(err));
 	}
+	getBot(id) {
+		
+       if (typeof id !== 'string') throw new TypeError('ID must be a string');
+		axios
+		.get(
+		      this._baseURL + `/getBot/id`
+                     )
+                     .then(res => console.log(res.data))
+	             .then(err => console.log(err));
+	}
+	
 }
 
 module.exports = Client;
