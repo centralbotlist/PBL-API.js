@@ -54,7 +54,7 @@ class Client {
 		.get(
 		      this._baseURL + `/getBot/id`
                      )
-                     .then(res => console.log(res.data))
+                     .then(res => console.log(res.body))
 	             .then(err => console.log(err));
 	}
 	
