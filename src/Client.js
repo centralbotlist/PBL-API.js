@@ -48,7 +48,7 @@ class Client {
 			.catch(err => console.log(err));
 	}
 	
-	  /**
+   /**
    * Gets information about a bot.
    * @param {string} id The ID of the bot you want to get the information from.
    * @returns {Promise<Object>}
@@ -59,6 +59,20 @@ class Client {
 		
        if (typeof id !== 'string') throw new TypeError('ID must be a string');
 	let res = await axios.get(this._baseURL + `/getBot/${id}`);
+        return res.data;
+	}
+	
+   /**
+   * Gets information about a user.
+   * @param {string} id The ID of the user you want to get the information from.
+   * @returns {Promise<Object>}
+   */
+
+	
+	async getUser(id) {
+		
+       if (typeof id !== 'string') throw new TypeError('ID must be a string');
+	let res = await axios.get(this._baseURL + `/getUser/${id}`);
         return res.data;
 	}
 	
