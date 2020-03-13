@@ -51,7 +51,7 @@ class Client {
 	  /**
    * Gets information about a bot.
    * @param {string} id The ID of the bot you want to get the information from.
-   * @returns {Promise<{ message: string, success: boolean }>}
+   * @returns {Promise<Object>}
    */
 
 	
@@ -59,7 +59,7 @@ class Client {
 		
        if (typeof id !== 'string') throw new TypeError('ID must be a string');
 	let res = axios.get(this._baseURL + `/getBot/${id}`);
-        return res.data;
+        return res;
 	}
 	
 }
