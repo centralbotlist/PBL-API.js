@@ -60,7 +60,7 @@ class Client {
        if (typeof id !== 'string') throw new TypeError('ID must be a string');
 	axios.get(this._baseURL + `/getBot/${id}`)
         .then(res => {
-	return res; 
+	return res.data; 
 	})
         .catch(err => console.log(err));
 	}
