@@ -58,8 +58,9 @@ class Client {
 	getBot(id) {
 		
        if (typeof id !== 'string') throw new TypeError('ID must be a string');
-	let req = axios.get(this._baseURL + `/getBot/id`).then(err => console.log(err));
-                return req;
+	axios.get(this._baseURL + `/getBot/${id}`)
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
 	}
 	
 }
