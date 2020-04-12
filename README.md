@@ -4,18 +4,48 @@
 The official package for posting server count to PBL
 
 ## Installation
-Simply run `npm install pbl-api`
+Simply run `npm install pblapi.js`
 
 ### Usage
 
-Posting Bot Server Count:
+Getting a bot:
 ```js
-const PBL = require('pbl-api');
-const Client = new PBL.Client({
-id: 'your-bot-id', botToken: 'your-bot-pbl-token'
+
+const pbl = require('pblapi.js');
+const PBL = new PBL.Client({
+id: 'your-bot-id', key: 'your-bot-pbl-token'
 });
 
-Client.postServerCount(20); //you can use <client>.guilds.size also
+PBL.getBot('some ID') //if you don't add ID it will take as default provided in preparing the client
+ .then(res => console.log(res.data))
+ .catch(err => console.log(err));
+
+```
+
+Getting a user:
+```js
+
+const pbl = require('pblapi.js');
+const PBL = new PBL.Client({
+id: 'your-bot-id', key: 'your-bot-pbl-token'
+});
+
+PBL.getUser('some ID') 
+ .then(res => console.log(res.data))
+ .catch(err => console.log(err));
+
+```
+
+Posting Bot Server Count:
+```js
+const pbl = require('pblapi.js');
+const PBL = new PBL.Client({
+id: 'your-bot-id', key: 'your-bot-pbl-token'
+});
+
+PBL.postStats(44) //must be a number
+ .then(res => console.log(res.data))
+ .catch(err => console.log(err));
 ```
 
  ## You may see new features in fututre.
