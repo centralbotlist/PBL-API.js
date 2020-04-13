@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/pbl-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/pbl-api/)
+[![NPM](https://nodei.co/npm/pblapi.js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/pblapi.js/)
 
 # PBL-API.js
 The official package for posting server count to PBL
