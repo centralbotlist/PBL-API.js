@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 const isObject = (obj) => !Array.isArray(obj) && obj === Object(obj);
 /**
- * @see https://pbl.glitch.me/api/docs
+ * @see https://tcbl.glitch.me/api/docs
  * @example <caption>Preparing the client</caption>
  * const pbl = require('pblapi.js');
  * const PBL = new pbl.Client({ id: 'your bot id', key: 'your bot's pbl token })
@@ -17,9 +17,9 @@ class Client {
 		if (!isObject(options)) throw new TypeError('[PBLAPI.js] Options must be an object');
 		if(!options.id) throw new TypeError('[PBLAPI.js] The bot ID is missing');
 		if (typeof options.id !== 'string') throw new TypeError('[PBLAPI.js] ID in options object must be a string');
-	    if (!options.key) throw new TypeError('[PBLAPI.js] The PBL Token of the bot is missing');
+	        if (!options.key) throw new TypeError('[PBLAPI.js] The PBL Token of the bot is missing');
 		if (typeof options.key !== 'string') throw new TypeError('[PBLAPI.js] Bot token in options object must be a string');
-		this._baseURL = 'https://pbl.glitch.me/api';
+		this._baseURL = 'https://tcbl.glitch.me/api';
 		this._key = options.key;
 		this._id = options.id;
 	    }
@@ -35,7 +35,7 @@ class Client {
 	
 	/**
    *
-   * @see https://pbl.glitch.me/api/docs/#getBot
+   * @see https://tcbl.glitch.me/api/docs/#getBot
    * @example <caption>Getting a bot from PBL</caption>
    * PBL.getBot('some ID') //if you don't add IDit will take as default provided in preparing the client
    *  .then(res => console.log(res.data))
@@ -64,7 +64,7 @@ class Client {
  
 	/**
    *
-   * @see https://pbl.glitch.me/api/docs/#getUser
+   * @see https://tcbl.glitch.me/api/docs/#getUser
    * @example <caption>Getting a user from PBL</caption>
    * PBL.getUser('some ID') 
    *  .then(res => console.log(res.data))
@@ -91,7 +91,7 @@ class Client {
 	
 		 /**
 		  * 
-      * @see https://pbl.glitch.me/api/docs/#postStats
+      * @see https://tcbl.glitch.me/api/docs/#postStats
       * @example <caption>Posting bot stats to pbl</caption>
       * PBL.postStats(44) //must be a number
       *  .then(res => console.log(res.data))
